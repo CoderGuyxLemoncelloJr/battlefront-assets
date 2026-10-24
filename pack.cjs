@@ -14,7 +14,7 @@ async function pack() {
         asset.pixelHeight = decoded.height;
         asset.sha256 = crypto.createHash('sha256').update(png).digest('hex');
         let limit = 768;
-        if (asset.name.startsWith('Holo_')) limit = 300;
+        if (asset.name.startsWith('Holo_') || asset.name.startsWith('Menu')) limit = 300;
         else if (asset.group === 'players') limit = asset.name.endsWith('_Hands') ? 128 : 256;
         const scale = Math.min(1, limit / Math.max(asset.width, asset.height));
         const width = Math.max(1, Math.round(asset.width * scale));
