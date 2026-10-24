@@ -1270,8 +1270,9 @@ var stepAssets = function() {
         var png = window.UPNG.decode(bytes.buffer);
         var rgba = new window.Uint8Array(window.UPNG.toRGBA8(png)[0]);
         var img = createImage(png.width, png.height, ARGB);
-        img.imageData.data.set(rgba);
-        img.fromImageData(img.imageData);
+        var data = img.sourceImg.getContext("2d").createImageData(png.width, png.height);
+        data.data.set(rgba);
+        img.fromImageData(data);
         assetImages[entry.name] = img;
         assetLoad.index++;
         assetLoad.ready = assetLoad.index === assetLoad.list.length;
