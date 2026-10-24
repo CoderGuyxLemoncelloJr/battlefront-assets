@@ -1218,7 +1218,7 @@ var weaponSprite = function(x, y, s, r, type, c) {
 };
 /**SFX (SwankyMan, Modified)**/
 // jshint ignore : start
-var assetBase = "https://cdn.jsdelivr.net/gh/CoderGuyxLemoncelloJr/battlefront-assets@main/";
+var assetBase = "https://cdn.jsdelivr.net/gh/CoderGuyxLemoncelloJr/battlefront-assets@b40dd19e55aff9676d46dc4396bb7ce3d1733060/";
 var assetLoad = { started: false, ready: false, error: "", index: 0, list: [], meta: {} };
 var assetImages = {};
 var startAssets = function(names) {
@@ -1237,18 +1237,23 @@ var startAssets = function(names) {
             fail();
             return;
         }
-        var wanted = {};
-        for (var i = 0; i < names.length; i++) {
-            wanted[names[i]] = true;
+        if (assetLoad.list.length || assetLoad.ready) return;
+        var meta = {};
+        var list = [];
+        for (var i = 0; i < pack.assets.length; i++) {
+            var entry = pack.assets[i];
+            meta[entry.name] = entry;
         }
-        for (var j = 0; j < pack.assets.length; j++) {
-            var entry = pack.assets[j];
-            assetLoad.meta[entry.name] = entry;
-            if (wanted[entry.name]) assetLoad.list.push(entry);
+        for (var j = 0; j < names.length; j++) {
+            var name = names[j];
+            if (!meta[name] || !pack.images[name]) {
+                assetLoad.error = "Missing image: " + name;
+                return;
+            }
+            list.push(meta[name]);
         }
-        if (assetLoad.list.length !== names.length) {
-            assetLoad.error = "An image is missing from the asset pack.";
-        }
+        assetLoad.meta = meta;
+        assetLoad.list = list;
     };
     $.ajax({ url: assetBase + "png-decoder.js", dataType: "script", cache: true, timeout: 30000 }).done(function() {
         $.ajax({ url: assetBase + "runtime.js", dataType: "script", cache: true, timeout: 60000 }).done(readPack).fail(fail);

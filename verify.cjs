@@ -29,6 +29,35 @@ for (const asset of manifest.assets) {
     if (asset.name !== 'MenuAchievements') assert(rgba.some((v, i) => i % 4 === 3 && v > 0), asset.name +
         ' is empty');
 }
+const holo = pack.assets.find(a => a.name === 'Holo_0');
+for (const mask of pack.assets.filter(a => a.name.startsWith('Menu'))) {
+    assert.equal(mask.pixelWidth, holo.pixelWidth, mask.name + ' mask width');
+    assert.equal(mask.pixelHeight, holo.pixelHeight, mask.name + ' mask height');
+}
+const callbacks = [];
+const loadScope = {
+    window: { BattlefrontPNG: pack },
+    $: { ajax() {
+        return {
+            done(fn) { callbacks.push(fn); return this; },
+            fail() { return this; }
+        };
+    } }
+};
+vm.createContext(loadScope);
+vm.runInContext(fs.readFileSync('pjs-loader.js', 'utf8'), loadScope);
+const game = acorn.parse(fs.readFileSync('battlefront-images.js', 'utf8'), { ecmaVersion: 5 });
+const names = game.body.flatMap(node => node.type === 'VariableDeclaration' ? node.declarations : [])
+    .find(node => node.id.name === 'assetNames').init.elements.map(node => node.value);
+loadScope.startAssets(names);
+callbacks.shift()();
+const read = callbacks.shift();
+read();
+read();
+assert.equal(loadScope.assetLoad.error, '');
+assert.equal(loadScope.assetLoad.list.length, names.length, 'Repeated callbacks must not duplicate images');
+assert.equal(loadScope.assetLoad.list.length, manifest.assets.length);
+assert.deepEqual(Array.from(loadScope.assetLoad.list, a => a.name), names);
 for (const file of ['pjs-loader.js', 'battlefront-images.js']) {
     if (!fs.existsSync(file)) continue;
     const tree = acorn.parse(fs.readFileSync(file, 'utf8'), {
