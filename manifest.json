@@ -1,0 +1,1085 @@
+{
+    "version": 1,
+    "assets": [
+        {
+            "name": "MenuMain",
+            "file": "MenuMain.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "ui",
+            "sha256": "e3cea934abdc91290242a74ba0e7abacb1d6f32400944957e3a315a7998202a9"
+        },
+        {
+            "name": "MenuPlay",
+            "file": "MenuPlay.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "ui",
+            "sha256": "1a6376df6186d3c7c308c4fd46a8d5b451961360c6c1a2806ea5eee67e2f1d88"
+        },
+        {
+            "name": "MenuPlayCustom",
+            "file": "MenuPlayCustom.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "ui",
+            "sha256": "18ce98be6f477cfd4705338fe56b2fdebf6c2f6a0b45383228489413354dbcc5"
+        },
+        {
+            "name": "MenuShop",
+            "file": "MenuShop.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "ui",
+            "sha256": "5f5fd55559812d9d776aed26f3433e23054368793d3786cc3123e8bec21b9287"
+        },
+        {
+            "name": "MenuCredits",
+            "file": "MenuCredits.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "ui",
+            "sha256": "04093ba6b79c3ff379dcbab29ed211e3723df2af6c561e2eee35187df73d118f"
+        },
+        {
+            "name": "MenuAchievements",
+            "file": "MenuAchievements.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "ui",
+            "sha256": "d0847d631673e382b5d62772716a6629284f88930d03fbe8b29b876967370903"
+        },
+        {
+            "name": "MinimapMask",
+            "file": "MinimapMask.png",
+            "width": 150,
+            "height": 150,
+            "pixelWidth": 600,
+            "pixelHeight": 600,
+            "group": "ui",
+            "sha256": "6b522f44c79a0415dbb57fdea74d0686704483ee3ebb302666948a86f720bffb"
+        },
+        {
+            "name": "AT_AT_Moss",
+            "file": "AT_AT_Moss.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "textures",
+            "sha256": "d7432b0e313e35b57e912f9a150c2e6ecdaf51ada43f83eef3c0ee46c7f225e0"
+        },
+        {
+            "name": "Jakku_Sand",
+            "file": "Jakku_Sand.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "textures",
+            "sha256": "1b532e61f307e1ee989390f4125992b969665909ea81d99a20a2d5cc52ba0901"
+        },
+        {
+            "name": "AT_AT_Sand",
+            "file": "AT_AT_Sand.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "textures",
+            "sha256": "1fb963516ec41dd7395ed4c7c7608a0c41d44692de95930d711e5c4a31d6c78a"
+        },
+        {
+            "name": "Jakku_Platform_Sand",
+            "file": "Jakku_Platform_Sand.png",
+            "width": 600,
+            "height": 300,
+            "pixelWidth": 1200,
+            "pixelHeight": 600,
+            "group": "textures",
+            "sha256": "d68cbe2d4d2c4b6ffdd04808fdc2257c46066e048f983ab1bab4dc3fd17c4170"
+        },
+        {
+            "name": "thermal_detonator",
+            "file": "thermal_detonator.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "items",
+            "sha256": "16c9ecaf15aa53289a2410586fbaddbf391685688a6b5a9981ae560053d4f87b"
+        },
+        {
+            "name": "medkit_1",
+            "file": "medkit_1.png",
+            "width": 400,
+            "height": 400,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "group": "items",
+            "sha256": "bdef9cb621c3ddaaa6afede53b68641df0537ee204f84169a600de2380193354"
+        },
+        {
+            "name": "jetpack_icon",
+            "file": "jetpack_icon.png",
+            "width": 200,
+            "height": 230,
+            "pixelWidth": 800,
+            "pixelHeight": 920,
+            "group": "items",
+            "sha256": "83cfd1400da7bc5b5b23d047747a0d8162af90802742e64c8e458523585e97aa"
+        },
+        {
+            "name": "jetpack_sprite",
+            "file": "jetpack_sprite.png",
+            "width": 200,
+            "height": 230,
+            "pixelWidth": 800,
+            "pixelHeight": 920,
+            "group": "items",
+            "sha256": "a79afc0183ab51faf60e96bd82c6316035c04d5f0946ab5dc400f41e54dd60c7"
+        },
+        {
+            "name": "red_landmine_sprite",
+            "file": "red_landmine_sprite.png",
+            "width": 200,
+            "height": 200,
+            "pixelWidth": 800,
+            "pixelHeight": 800,
+            "group": "items",
+            "sha256": "7ad29e4bd539021da98d86b312fd298d7ba0d0a16e0b9a5d136d38a2b8883fbe"
+        },
+        {
+            "name": "blue_landmine_sprite",
+            "file": "blue_landmine_sprite.png",
+            "width": 200,
+            "height": 200,
+            "pixelWidth": 800,
+            "pixelHeight": 800,
+            "group": "items",
+            "sha256": "1a5e4e8fd54669f739fdffdfb089167cbe5ee36ed387e4426e8012424a287476"
+        },
+        {
+            "name": "PlayerSkin_FirstOrderStormtrooper",
+            "file": "PlayerSkin_FirstOrderStormtrooper.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "cb391dd09965c7e8e4cc2650b1e17db97f870fbb05c12226c525c678358abec0"
+        },
+        {
+            "name": "PlayerSkin_Shadowtrooper",
+            "file": "PlayerSkin_Shadowtrooper.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "4a6d59c8415d5aa763e697d306f2be318ee2c43c0e5cfc7cba242c13e73a7c51"
+        },
+        {
+            "name": "PlayerSkin_HeavyShoretrooper",
+            "file": "PlayerSkin_HeavyShoretrooper.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "2788b798a7bf45775b8953e6a44ffc4d09ad64c24be14a07a970a7c061cf54fa"
+        },
+        {
+            "name": "PlayerSkin_Shoretrooper",
+            "file": "PlayerSkin_Shoretrooper.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "0f274ec5ef689b653b11291b98a957626ab474d349eefaa6e3d87fa726970eb7"
+        },
+        {
+            "name": "PlayerSkin_LukeSkywalker",
+            "file": "PlayerSkin_LukeSkywalker.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "b34560d754230f6115ee1ab45ac8f1d55a5eeb3fc04e36eab49abf8ca187b2d8"
+        },
+        {
+            "name": "PlayerSkin_KyloRen",
+            "file": "PlayerSkin_KyloRen.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "ec142dee5ef5c74d1779544e057753d78c366c8eb36bf409f9b0c9ce18b32fc5"
+        },
+        {
+            "name": "PlayerSkin_CloneTrooper",
+            "file": "PlayerSkin_CloneTrooper.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "996be1ea2756f93b96b56cbbc29d3e52aa6a3535a21cc68cd7f7a48863b58f2e"
+        },
+        {
+            "name": "PlayerSkin_RebelTrooper",
+            "file": "PlayerSkin_RebelTrooper.png",
+            "width": 424,
+            "height": 424,
+            "pixelWidth": 1272,
+            "pixelHeight": 1272,
+            "group": "players",
+            "sha256": "30295f10dfadbf366684547138b1cc29eed3f7606a4206d6dc32f717d14ffb13"
+        },
+        {
+            "name": "saber_hotbar_blue",
+            "file": "saber_hotbar_blue.png",
+            "width": 64,
+            "height": 64,
+            "pixelWidth": 256,
+            "pixelHeight": 256,
+            "group": "items",
+            "sha256": "1cb5b37ec3a6d4bbde911686401449b2e1f184bf4e45ad4118263bd8cd4f3df5"
+        },
+        {
+            "name": "saber_hotbar_red",
+            "file": "saber_hotbar_red.png",
+            "width": 64,
+            "height": 64,
+            "pixelWidth": 256,
+            "pixelHeight": 256,
+            "group": "items",
+            "sha256": "4f5cd2e974ecb9188741ecac39b280077012aec03d920e67ca88a431fc7b1277"
+        },
+        {
+            "name": "weapon_F_11D",
+            "file": "weapon_F_11D.png",
+            "width": 127,
+            "height": 34,
+            "pixelWidth": 508,
+            "pixelHeight": 136,
+            "origin": {
+                "x": 9,
+                "y": 20
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "30d56d42fdf31096db54686a608760ec0803b8364898f65c7402592ee7140aca"
+        },
+        {
+            "name": "weapon_Sniper",
+            "file": "weapon_Sniper.png",
+            "width": 184,
+            "height": 22,
+            "pixelWidth": 736,
+            "pixelHeight": 88,
+            "origin": {
+                "x": 2,
+                "y": 12
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "ca7c122df1486bd730b66878ca296f58a90dee89832313fec443ccbabc226d39"
+        },
+        {
+            "name": "weapon_E11",
+            "file": "weapon_E11.png",
+            "width": 127,
+            "height": 34,
+            "pixelWidth": 508,
+            "pixelHeight": 136,
+            "origin": {
+                "x": 9,
+                "y": 9
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "a39caeedef6ce775ccdc87a64dba133b748b54fbf0df1ea3118c69f41050ed5f"
+        },
+        {
+            "name": "icon_F_11D",
+            "file": "icon_F_11D.png",
+            "width": 336.6666666666667,
+            "height": 108.33333333333333,
+            "pixelWidth": 1010,
+            "pixelHeight": 325,
+            "origin": {
+                "x": 168.66666666666666,
+                "y": 54.66666666666666
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "afd05c6c429b9287b7434987f43f7c0c131ab3319e1ab5f2151de714c253d07d"
+        },
+        {
+            "name": "icon_E11",
+            "file": "icon_E11.png",
+            "width": 380,
+            "height": 152,
+            "pixelWidth": 1140,
+            "pixelHeight": 456,
+            "origin": {
+                "x": 191.33333333333334,
+                "y": 75.33333333333333
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "b22e4b0d6e686a0a51bd34eddc4dc638f51ba09d46b1ce8f5868e46f070254a3"
+        },
+        {
+            "name": "icon_Sniper",
+            "file": "icon_Sniper.png",
+            "width": 392.3333333333333,
+            "height": 85,
+            "pixelWidth": 1177,
+            "pixelHeight": 255,
+            "origin": {
+                "x": 197,
+                "y": 39.66666666666666
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "0b17b3a566bb84ddbd32bfa81917040b4ebc53bcb788bc49fb76180a47d8f555"
+        },
+        {
+            "name": "icon_Kylo_Ren_Lightsaber",
+            "file": "icon_Kylo_Ren_Lightsaber.png",
+            "width": 193.66666666666666,
+            "height": 390.6666666666667,
+            "pixelWidth": 581,
+            "pixelHeight": 1172,
+            "origin": {
+                "x": 96.66666666666667,
+                "y": 195.33333333333334
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "a479604cf4af5de55b3aec94e67ad850bb6ae60d454044e7a02893e8a7ff0640"
+        },
+        {
+            "name": "PlayerSkin_FirstOrderStormtrooper_Hands",
+            "file": "PlayerSkin_FirstOrderStormtrooper_Hands.png",
+            "width": 174,
+            "height": 163,
+            "pixelWidth": 348,
+            "pixelHeight": 326,
+            "origin": {
+                "x": 93,
+                "y": 281
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "6c91a6d6ecacb336f0d720451317ed1458cc6b72b7126cdb944cc7674441b7cd"
+        },
+        {
+            "name": "PlayerSkin_Shadowtrooper_Hands",
+            "file": "PlayerSkin_Shadowtrooper_Hands.png",
+            "width": 324,
+            "height": 88,
+            "pixelWidth": 648,
+            "pixelHeight": 176,
+            "origin": {
+                "x": 166,
+                "y": 144
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "3f15a96092d7adee014adf5b398921eba66199f9808172c94cce13129db5f333"
+        },
+        {
+            "name": "PlayerSkin_HeavyShoretrooper_Hands",
+            "file": "PlayerSkin_HeavyShoretrooper_Hands.png",
+            "width": 324,
+            "height": 316,
+            "pixelWidth": 648,
+            "pixelHeight": 632,
+            "origin": {
+                "x": 166,
+                "y": 144
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "c2ca57885aba6482cdafcbd5a156665962b8d72fb9a6d0d65f8f000dfc9db8ca"
+        },
+        {
+            "name": "PlayerSkin_Shoretrooper_Hands",
+            "file": "PlayerSkin_Shoretrooper_Hands.png",
+            "width": 324,
+            "height": 88,
+            "pixelWidth": 648,
+            "pixelHeight": 176,
+            "origin": {
+                "x": 166,
+                "y": 144
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "42dee06c3189b88ec73484cd10d70078d29a07f8da9916bcfbd52b8e56a7703f"
+        },
+        {
+            "name": "PlayerSkin_LukeSkywalker_Hands",
+            "file": "PlayerSkin_LukeSkywalker_Hands.png",
+            "width": 326,
+            "height": 93.5,
+            "pixelWidth": 652,
+            "pixelHeight": 187,
+            "origin": {
+                "x": 163,
+                "y": 149.5
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "14a32110435b9eba26191759c7859c69166af47032c8a3471a8cb51723b594eb"
+        },
+        {
+            "name": "PlayerSkin_KyloRen_Hands",
+            "file": "PlayerSkin_KyloRen_Hands.png",
+            "width": 324,
+            "height": 88,
+            "pixelWidth": 648,
+            "pixelHeight": 176,
+            "origin": {
+                "x": 166,
+                "y": 144
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "3f15a96092d7adee014adf5b398921eba66199f9808172c94cce13129db5f333"
+        },
+        {
+            "name": "PlayerSkin_CloneTrooper_Hands",
+            "file": "PlayerSkin_CloneTrooper_Hands.png",
+            "width": 324,
+            "height": 88,
+            "pixelWidth": 648,
+            "pixelHeight": 176,
+            "origin": {
+                "x": 166,
+                "y": 144
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "b09edbe34b0f1986622e89d782d22b531a79f6a1cb84ef2d3ce76c69d64a1995"
+        },
+        {
+            "name": "PlayerSkin_RebelTrooper_Hands",
+            "file": "PlayerSkin_RebelTrooper_Hands.png",
+            "width": 326,
+            "height": 93.5,
+            "pixelWidth": 652,
+            "pixelHeight": 187,
+            "origin": {
+                "x": 163,
+                "y": 149.5
+            },
+            "extra": true,
+            "group": "players",
+            "sha256": "9fdccda579abd0fd6934f9e2743dbe22f83f3517a561e9b46998fe31de9f73b0"
+        },
+        {
+            "name": "saber_blue_0",
+            "file": "saber_blue_0.png",
+            "width": 27,
+            "height": 92,
+            "pixelWidth": 54,
+            "pixelHeight": 184,
+            "origin": {
+                "x": 12.5,
+                "y": 35.5
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "e3e8be8be3fd8a9bd81998dc3fe5f38b02da7f169b604e7d4d480254a54221ac"
+        },
+        {
+            "name": "saber_blue_1",
+            "file": "saber_blue_1.png",
+            "width": 42,
+            "height": 183.5,
+            "pixelWidth": 84,
+            "pixelHeight": 367,
+            "origin": {
+                "x": 21,
+                "y": 127
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "b4a017b2e1c83a2ebfe0daff23b2844ca97e13ae9d8e63618f3a1e84a68be3fc"
+        },
+        {
+            "name": "saber_blue_2",
+            "file": "saber_blue_2.png",
+            "width": 42,
+            "height": 258.5,
+            "pixelWidth": 84,
+            "pixelHeight": 517,
+            "origin": {
+                "x": 21,
+                "y": 202
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "7ab39a454703668c8b39f87e0164524eaa588dc79ce47a36fc0ded711825a833"
+        },
+        {
+            "name": "saber_blue_3",
+            "file": "saber_blue_3.png",
+            "width": 42,
+            "height": 333.5,
+            "pixelWidth": 84,
+            "pixelHeight": 667,
+            "origin": {
+                "x": 21,
+                "y": 277
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "8fb0ff00f5fdd2654728a4ea98dccb785353fff20e01ef39281deacac70a88d1"
+        },
+        {
+            "name": "saber_blue_4",
+            "file": "saber_blue_4.png",
+            "width": 42,
+            "height": 408.5,
+            "pixelWidth": 84,
+            "pixelHeight": 817,
+            "origin": {
+                "x": 21,
+                "y": 352
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "fc8ee518f6770fef6f0d5007c0b0ff8670a4ca0ec58971348a036a228d26584b"
+        },
+        {
+            "name": "saber_red_0",
+            "file": "saber_red_0.png",
+            "width": 52,
+            "height": 92,
+            "pixelWidth": 104,
+            "pixelHeight": 184,
+            "origin": {
+                "x": 25.5,
+                "y": 45.5
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "7478279fb5ae8dd49ac18bbb2bd0e99904b9da3e7fefe746952149dc054ae84d"
+        },
+        {
+            "name": "saber_red_1",
+            "file": "saber_red_1.png",
+            "width": 67,
+            "height": 183.5,
+            "pixelWidth": 134,
+            "pixelHeight": 367,
+            "origin": {
+                "x": 39,
+                "y": 137
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "075b1c083241a2c5c67cd9d8ff40f3a5750b7a483a1299843b32328cd8e4811b"
+        },
+        {
+            "name": "saber_red_2",
+            "file": "saber_red_2.png",
+            "width": 92,
+            "height": 258.5,
+            "pixelWidth": 184,
+            "pixelHeight": 517,
+            "origin": {
+                "x": 51,
+                "y": 212
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "272933de7a0b1ce963d4b0910a6b165707447be1d97368ce8981f8b4affa636e"
+        },
+        {
+            "name": "saber_red_3",
+            "file": "saber_red_3.png",
+            "width": 117,
+            "height": 333.5,
+            "pixelWidth": 234,
+            "pixelHeight": 667,
+            "origin": {
+                "x": 64,
+                "y": 287
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "05225a642b36e9561e6b7a224e8c7405f06a8aabaf93a0e1dcc5df8a35f463a4"
+        },
+        {
+            "name": "saber_red_4",
+            "file": "saber_red_4.png",
+            "width": 142,
+            "height": 408.5,
+            "pixelWidth": 284,
+            "pixelHeight": 817,
+            "origin": {
+                "x": 76,
+                "y": 362
+            },
+            "extra": true,
+            "group": "weapons",
+            "sha256": "416852765efc32e98fee0066cfeb8816392faa720ca11e4b83c1e3916aae8a01"
+        },
+        {
+            "name": "StarWarsLogo",
+            "file": "StarWarsLogo.png",
+            "width": 465,
+            "height": 231,
+            "pixelWidth": 930,
+            "pixelHeight": 462,
+            "origin": {
+                "x": 6.5,
+                "y": 74.5
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "45946abb38264b7b286ef0122528b5bf2b81bc2a2f93f2700a7df65f0e97b174"
+        },
+        {
+            "name": "Holo_0",
+            "file": "Holo_0.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "6e34491ff8969b0c4e62350a37fb4a5d81ef624e03caffaa9f3f49bc6e8be321"
+        },
+        {
+            "name": "Holo_1",
+            "file": "Holo_1.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "071542594a4a7c51cf30efe783acdba1ac33db2a9ec956ebf9a54d8e933d6bcd"
+        },
+        {
+            "name": "Holo_2",
+            "file": "Holo_2.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "4c6af0afe02ae784be61ac115bfe11e699a2f20ff17c0afb8b71af6166a8f187"
+        },
+        {
+            "name": "Holo_3",
+            "file": "Holo_3.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "b693aff50745e79c26c2ed6c9637cbdf67c1a39d3befbe2ed42e90f2704c4ee5"
+        },
+        {
+            "name": "Holo_4",
+            "file": "Holo_4.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "6ada74f05fce0f071cf2c0140385e8498922ab907520ce6fa9b8fe3748c7b41d"
+        },
+        {
+            "name": "Holo_5",
+            "file": "Holo_5.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "33df07beb2cdb489f4ac4b0432277a2622ca27cd78317969f80b42617c46c232"
+        },
+        {
+            "name": "Holo_6",
+            "file": "Holo_6.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "56ebc1ab04477e0365fa6dcfa182b6e75c2cf3f272422a7064a4901080d5d1ad"
+        },
+        {
+            "name": "Holo_7",
+            "file": "Holo_7.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "e1747b17b7d23d7332a113f2b08381fa55d3355530db812446167769d2a5e1cf"
+        },
+        {
+            "name": "Holo_8",
+            "file": "Holo_8.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "7888e49d9ca5d654415f8334d4799f4183aefb6e0bc804988e6e2a0877672c24"
+        },
+        {
+            "name": "Holo_9",
+            "file": "Holo_9.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "0219ccdddb0d17e46b6cbe6e6659039772ed71c49762134b6e27dc96e0b61f68"
+        },
+        {
+            "name": "Holo_10",
+            "file": "Holo_10.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "5eeaa47e7eead702150c2882b30c72db36cc69bd6bfe08a8fe4bcd5af3ea2ed6"
+        },
+        {
+            "name": "Holo_11",
+            "file": "Holo_11.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "dd727833199e52a1bfecb5bf2685dda01595db4833fab7749bab3bdd1bcfe663"
+        },
+        {
+            "name": "Holo_12",
+            "file": "Holo_12.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "df4f5450073077642e3058034a4f773ca1a52f7aa94f56481cfba9255863e49f"
+        },
+        {
+            "name": "Holo_13",
+            "file": "Holo_13.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "1c833306718df756c80922edcbe4a0d95b8b74af066b910480985b186d3dd20e"
+        },
+        {
+            "name": "Holo_14",
+            "file": "Holo_14.png",
+            "width": 600,
+            "height": 600,
+            "pixelWidth": 1200,
+            "pixelHeight": 1200,
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "extra": true,
+            "group": "ui",
+            "sha256": "6722743dc76c723794e34f2beff7332bd2239cf7166fe127935c819f763210a9"
+        },
+        {
+            "name": "prop_AT_AT_Moss",
+            "file": "prop_AT_AT_Moss.png",
+            "width": 762,
+            "height": 942.5,
+            "pixelWidth": 1524,
+            "pixelHeight": 1885,
+            "origin": {
+                "x": 572,
+                "y": 624
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "4b5559065ab71a4de5d4dd3e1eea0a9fd2787687f7edc72ff91e8fbb0a74999a"
+        },
+        {
+            "name": "prop_AT_AT_Sand",
+            "file": "prop_AT_AT_Sand.png",
+            "width": 762,
+            "height": 942.5,
+            "pixelWidth": 1524,
+            "pixelHeight": 1885,
+            "origin": {
+                "x": 572,
+                "y": 624
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "168e9f1addbd47ed5ea8979fe63c53d86f6f599aa77d6691dbc47fc1b4b29582"
+        },
+        {
+            "name": "prop_CrashedTIE_sf",
+            "file": "prop_CrashedTIE_sf.png",
+            "width": 873.5,
+            "height": 527,
+            "pixelWidth": 1747,
+            "pixelHeight": 1054,
+            "origin": {
+                "x": 217,
+                "y": 263.5
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "e558fdac1e4a84ab7926794c804dd5ace2a53e27b51322606878d782423ee8f5"
+        },
+        {
+            "name": "prop_CrashedTIE_ln",
+            "file": "prop_CrashedTIE_ln.png",
+            "width": 873.5,
+            "height": 527,
+            "pixelWidth": 1747,
+            "pixelHeight": 1054,
+            "origin": {
+                "x": 217,
+                "y": 263.5
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "e4dcee574e5ee10f3c3efdf6858ae5fe6fc8dd1ee52236100d2a4ceaad9293ab"
+        },
+        {
+            "name": "prop_CrashedXwing",
+            "file": "prop_CrashedXwing.png",
+            "width": 879,
+            "height": 928.5,
+            "pixelWidth": 1758,
+            "pixelHeight": 1857,
+            "origin": {
+                "x": 446,
+                "y": 339.5
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "1e9cad3fb06d76913b9dec352ebb15ddd5d75ceb14c99b857f7097cc7d0a0810"
+        },
+        {
+            "name": "prop_Crate",
+            "file": "prop_Crate.png",
+            "width": 211.5,
+            "height": 211.5,
+            "pixelWidth": 846,
+            "pixelHeight": 846,
+            "origin": {
+                "x": 105.5,
+                "y": 105.5
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "7973cee8f687b8c065b18739387a837e70bad86e37b6e9e7b25e4cc08e50dbdd"
+        },
+        {
+            "name": "prop_Tree_tri",
+            "file": "prop_Tree_tri.png",
+            "width": 495.5,
+            "height": 474.5,
+            "pixelWidth": 991,
+            "pixelHeight": 949,
+            "origin": {
+                "x": 240.5,
+                "y": 256
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "f6a511b6803faa7ec645b5dec65a50c0820acb073c417bd92e3028e7902d895b"
+        },
+        {
+            "name": "prop_Tree_round",
+            "file": "prop_Tree_round.png",
+            "width": 412,
+            "height": 412,
+            "pixelWidth": 824,
+            "pixelHeight": 824,
+            "origin": {
+                "x": 206,
+                "y": 206
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "dec2d5b619f3e63fbab399da18892a7139581089896c0714e7f6c7e27e602642"
+        },
+        {
+            "name": "prop_JunkPile_1",
+            "file": "prop_JunkPile_1.png",
+            "width": 101.5,
+            "height": 99,
+            "pixelWidth": 203,
+            "pixelHeight": 198,
+            "origin": {
+                "x": 52.5,
+                "y": 50
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "6364aa19e7a3d69e129fdca0f29017c2b25a441bb6aa47cc5b90f13fac539aad"
+        },
+        {
+            "name": "prop_JunkPile_2",
+            "file": "prop_JunkPile_2.png",
+            "width": 107.5,
+            "height": 65,
+            "pixelWidth": 215,
+            "pixelHeight": 130,
+            "origin": {
+                "x": 32.5,
+                "y": 32.5
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "80bf592ecc14daa5c0898c0e7c34fb6059bdc8c91eafd2bef70d6de24fc38f48"
+        },
+        {
+            "name": "prop_JunkPile_3",
+            "file": "prop_JunkPile_3.png",
+            "width": 283,
+            "height": 258,
+            "pixelWidth": 566,
+            "pixelHeight": 516,
+            "origin": {
+                "x": 194,
+                "y": 184
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "91137b8289880c2dd2be0dafd9b6db83cd21f5caeb17216a750070ef616c18ed"
+        },
+        {
+            "name": "prop_JunkPile_4",
+            "file": "prop_JunkPile_4.png",
+            "width": 159,
+            "height": 158,
+            "pixelWidth": 318,
+            "pixelHeight": 316,
+            "origin": {
+                "x": 120,
+                "y": 79
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "5d5e0858deed4b59c23c09c61157a0a7c18351b15152d58cefb4653d0edc52a7"
+        },
+        {
+            "name": "prop_JunkPile_5",
+            "file": "prop_JunkPile_5.png",
+            "width": 188,
+            "height": 188,
+            "pixelWidth": 376,
+            "pixelHeight": 376,
+            "origin": {
+                "x": 94,
+                "y": 94
+            },
+            "extra": true,
+            "group": "props",
+            "sha256": "2e127bcbe90b2eadab41a038b872716c45ef3f44cc80bbc5cdebc5aeae912b86"
+        }
+    ]
+}
