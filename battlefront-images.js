@@ -1,3 +1,5 @@
+var assetImages;
+var drawAsset;
 /**
  * 
  * You'll probably need to hit restart once
@@ -658,15 +660,7 @@ var aiApplySquadFollow = function(bot, crowdingAlly) {
         aiMoveAway(bot, crowdingAlly.pos, 0.45);
     }
 };
-var drawPlayerVector = function(skin, size, hideHands) {
-    var name = skinImageNames[skin];
-    if (name && assetImages[name]) {
-        image(assetImages[name], -size, -size, size * 2, size * 2);
-    }
-    if (!hideHands) {
-        drawSkinHands(skin, size);
-    }
-};
+
 var skinImageNames = {
     "First Order Stormtrooper": "PlayerSkin_FirstOrderStormtrooper",
     Shadowtrooper: "PlayerSkin_Shadowtrooper",
@@ -682,15 +676,13 @@ var drawSkinHands = function(skinName, size) {
     drawAsset(skinImageNames[skinName] + "_Hands", 0, 0, size / 212);
 };
 var drawPlayer = function(skin, size, hideHands) {
-    var skinImageName = skinImageNames[skin];
-    if (skinImageName && typeof loadedImages !== "undefined" && loadedImages[skinImageName]) {
-        image(loadedImages[skinImageName], -size, -size, size * 2, size * 2);
-        if (!hideHands) {
-            drawSkinHands(skin, size);
-        }
-        return;
+    var name = skinImageNames[skin];
+    if (name && assetImages[name]) {
+        image(assetImages[name], -size, -size, size * 2, size * 2);
     }
-    drawPlayerVector(skin, size, hideHands);
+    if (!hideHands) {
+        drawSkinHands(skin, size);
+    }
 };
 var getHandColors = function(skinName) {
     var n = ("" + skinName).toLowerCase();
@@ -1246,7 +1238,9 @@ var startAssets = function(names) {
             return;
         }
         var wanted = {};
-        for (var i = 0; i < names.length; i++) wanted[names[i]] = true;
+        for (var i = 0; i < names.length; i++) {
+            wanted[names[i]] = true;
+        }
         for (var j = 0; j < pack.assets.length; j++) {
             var entry = pack.assets[j];
             assetLoad.meta[entry.name] = entry;
@@ -1257,7 +1251,7 @@ var startAssets = function(names) {
         }
     };
     $.ajax({ url: assetBase + "png-decoder.js", dataType: "script", cache: true, timeout: 30000 }).done(function() {
-        $.ajax({ url: assetBase + "images.js", dataType: "script", cache: true, timeout: 60000 }).done(readPack).fail(fail);
+        $.ajax({ url: assetBase + "runtime.js", dataType: "script", cache: true, timeout: 60000 }).done(readPack).fail(fail);
     }).fail(fail);
 };
 var stepAssets = function() {
@@ -1266,7 +1260,9 @@ var stepAssets = function() {
         var entry = assetLoad.list[assetLoad.index];
         var text = window.atob(window.BattlefrontPNG.images[entry.name]);
         var bytes = new window.Uint8Array(text.length);
-        for (var i = 0; i < text.length; i++) bytes[i] = text.charCodeAt(i);
+        for (var i = 0; i < text.length; i++) {
+            bytes[i] = text.charCodeAt(i);
+        }
         var png = window.UPNG.decode(bytes.buffer);
         var rgba = new window.Uint8Array(window.UPNG.toRGBA8(png)[0]);
         var img = createImage(png.width, png.height, ARGB);

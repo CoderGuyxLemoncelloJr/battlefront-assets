@@ -2,12 +2,21 @@ const fs = require('node:fs');
 const acorn = require('acorn');
 if (!process.argv[2]) throw Error('Pass the original battlefront.js path.');
 const source = fs.readFileSync(process.argv[2], 'utf8');
-const tree = acorn.parse(source, {ecmaVersion:5});
+const tree = acorn.parse(source, {
+    ecmaVersion: 5
+});
 const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
 const edits = [];
-function replace(node, text) { edits.push({start:node.start,end:node.end,text}); }
+
+function replace(node, text) {
+    edits.push({
+        start: node.start,
+        end: node.end,
+        text
+    });
+}
 const functions = {
-    drawPlayerVector: `function(skin, size, hideHands) {
+    drawPlayer: `function(skin, size, hideHands) {
     var name = skinImageNames[skin];
     if (name && assetImages[name]) {
         image(assetImages[name], -size, -size, size * 2, size * 2);
@@ -61,27 +70,39 @@ const props = {
     JunkPile: '"prop_JunkPile_" + this.type',
     Box: '"prop_Crate"'
 };
+
 function walk(node) {
     if (!node || typeof node !== 'object') return;
     if (node.type === 'VariableDeclaration') {
+        if (node.declarations.length === 1 && node.declarations[0].id.name === 'drawPlayerVector') {
+            replace(node, '');
+            return;
+        }
         for (const d of node.declarations) {
-            if (functions[d.id.name] && d.init && d.init.type === 'FunctionExpression') replace(d.init, functions[d.id.name]);
+            if (functions[d.id.name] && d.init && d.init.type === 'FunctionExpression') replace(d.init,
+                functions[d.id.name]);
             if (d.id.name === 'imagesToLoad') {
-                const cached = manifest.assets.filter(a => !a.extra).map(a => ({name:a.name,w:a.width,h:a.height}));
+                const cached = manifest.assets.filter(a => !a.extra).map(a => ({
+                    name: a.name,
+                    w: a.width,
+                    h: a.height
+                }));
                 replace(d.init, JSON.stringify(cached, null, 4));
             }
         }
     }
-    if (node.type === 'ForStatement' && source.slice(node.start,node.start+80).includes('playerSkinImageIndex')) {
+    if (node.type === 'ForStatement' && source.slice(node.start, node.start + 80).includes(
+            'playerSkinImageIndex')) {
         replace(node, '');
         return;
     }
-    if (node.type === 'ExpressionStatement' && node.expression.type === 'CallExpression' && source.slice(node.expression.callee.start,node.expression.callee.end) === 'imagesToLoad.push') {
+    if (node.type === 'ExpressionStatement' && node.expression.type === 'CallExpression' && source.slice(node
+            .expression.callee.start, node.expression.callee.end) === 'imagesToLoad.push') {
         replace(node, '');
         return;
     }
     if (node.type === 'AssignmentExpression') {
-        const left = source.slice(node.left.start,node.left.end);
+        const left = source.slice(node.left.start, node.left.end);
         if (functions[left] && node.right.type === 'FunctionExpression') replace(node.right, functions[left]);
         const match = left.match(/^(\w+)\.prototype\.render$/);
         if (match && props[match[1]]) {
@@ -106,12 +127,14 @@ function walk(node) {
     var alpha = dist(playerPos.x, playerPos.y, this.x, this.y) < this.width / 1.78 && playerPos.z < this.zValue ? 175 : 255;
     this.translucent = lerp(this.translucent, alpha, 0.1);
 }`);
-        if (['F_11D','Sniper','E11'].includes(left) && node.right.type === 'NewExpression' && node.right.callee.name === 'Blaster') {
+        if (['F_11D', 'Sniper', 'E11'].includes(left) && node.right.type === 'NewExpression' && node.right
+            .callee.name === 'Blaster') {
             const render = node.right.arguments[0].properties.find(p => p.key.name === 'renderFunc');
             replace(render.value, `function() { drawAsset("weapon_${left}", 0, 0); }`);
         }
     }
-    if (node.type === 'IfStatement' && source.slice(node.test.start,node.test.end) === 'gameStage === "ImageLoad"') {
+    if (node.type === 'IfStatement' && source.slice(node.test.start, node.test.end) ===
+        'gameStage === "ImageLoad"') {
         replace(node.consequent, `{
             startAssets(assetNames);
             stepAssets();
@@ -138,16 +161,20 @@ function walk(node) {
     }
 }
 walk(tree);
-edits.sort((a,b) => b.start-a.start);
+edits.sort((a, b) => b.start - a.start);
 let output = source;
 let limit = source.length + 1;
 for (const edit of edits) {
-    if (edit.end > limit) throw Error('Overlapping edits at ' + source.slice(edit.start,edit.start+100));
-    output = output.slice(0,edit.start) + edit.text + output.slice(edit.end);
+    if (edit.end > limit) throw Error('Overlapping edits at ' + source.slice(edit.start, edit.start + 100));
+    output = output.slice(0, edit.start) + edit.text + output.slice(edit.end);
     limit = edit.start;
 }
-const loader = fs.readFileSync('pjs-loader.js','utf8') + '\nvar assetNames = ' + JSON.stringify(manifest.assets.map(a=>a.name), null, 4) + ';\n';
-output = output.replace('// jshint ignore : start', '// jshint ignore : start\n' + loader);
-acorn.parse(output,{ecmaVersion:5});
-fs.writeFileSync('battlefront-images.js',output);
+const loader = fs.readFileSync('pjs-loader.js', 'utf8') + '\nvar assetNames = ' + JSON.stringify(manifest
+    .assets.map(a => a.name), null, 4) + ';\n';
+output = 'var assetImages;\nvar drawAsset;\n' + output.replace('// jshint ignore : start',
+    '// jshint ignore : start\n' + loader);
+acorn.parse(output, {
+    ecmaVersion: 5
+});
+fs.writeFileSync('battlefront-images.js', output);
 console.log('Created image-based Battlefront build.');

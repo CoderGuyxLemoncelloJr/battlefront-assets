@@ -1,5 +1,8 @@
 const fs = require('node:fs');
-const { createCanvas, loadImage } = require('@napi-rs/canvas');
+const {
+    createCanvas,
+    loadImage
+} = require('@napi-rs/canvas');
 async function main() {
     const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
     for (const asset of manifest.assets) {
@@ -9,7 +12,10 @@ async function main() {
         const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0);
         const data = ctx.getImageData(0, 0, img.width, img.height).data;
-        let left = img.width, top = img.height, right = 0, bottom = 0;
+        let left = img.width,
+            top = img.height,
+            right = 0,
+            bottom = 0;
         for (let y = 0; y < img.height; y++) {
             for (let x = 0; x < img.width; x++) {
                 if (!data[(y * img.width + x) * 4 + 3]) continue;
@@ -24,7 +30,8 @@ async function main() {
         top = Math.max(0, top - 8);
         right = Math.min(img.width - 1, right + 8);
         bottom = Math.min(img.height - 1, bottom + 8);
-        const sx = img.width / asset.width, sy = img.height / asset.height;
+        const sx = img.width / asset.width,
+            sy = img.height / asset.height;
         const out = createCanvas(right - left + 1, bottom - top + 1);
         out.getContext('2d').drawImage(canvas, -left, -top);
         asset.origin.x -= left / sx;
@@ -37,4 +44,7 @@ async function main() {
     }
     fs.writeFileSync('manifest.json', JSON.stringify(manifest, null, 4) + '\n');
 }
-main().catch(error => { console.error(error); process.exitCode = 1; });
+main().catch(error => {
+    console.error(error);
+    process.exitCode = 1;
+});

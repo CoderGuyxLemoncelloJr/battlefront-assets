@@ -18,7 +18,7 @@ npm run pack
 npm test
 ```
 
-Commit the PNG, updated manifest and `images.js`. The pack contains the PNG files as base64, not drawing commands. `png-decoder.js` contains the PNG decoder and its compression library. The game loads these through jsDelivr because Khan's PJS image policy does not allow direct jsDelivr image URLs.
+Commit the PNG, updated manifest and `runtime.js`. The pack contains smaller runtime PNGs as base64, not drawing commands. The full-resolution PNGs stay available for editing. Runtime images are decoded once during loading and reused with `image()` throughout the game; they are not decoded every frame. `png-decoder.js` contains the PNG decoder and its compression library. The game loads these through jsDelivr because Khan's PJS image policy does not allow direct jsDelivr image URLs.
 
 For reproducible exports from the original vector artwork, `drawings.js` is an offline source file. `npm run render` regenerates the PNGs and overwrites manual PNG edits. It is not loaded by the game. Run `node crop.cjs` after rendering to trim optional sprite margins, then pack again.
 

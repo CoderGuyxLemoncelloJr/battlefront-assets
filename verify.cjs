@@ -4,8 +4,10 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const UPNG = require('upng-js');
 const acorn = require('acorn');
-const scope = {window: {}};
-vm.runInNewContext(fs.readFileSync('images.js', 'utf8'), scope);
+const scope = {
+    window: {}
+};
+vm.runInNewContext(fs.readFileSync('runtime.js', 'utf8'), scope);
 const pack = scope.window.BattlefrontPNG;
 const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
 assert.equal(new Set(manifest.assets.map(a => a.name)).size, manifest.assets.length);
@@ -15,11 +17,36 @@ for (const asset of manifest.assets) {
     assert.equal(decoded.width, asset.pixelWidth, asset.name);
     assert.equal(decoded.height, asset.pixelHeight, asset.name);
     assert.equal(crypto.createHash('sha256').update(png).digest('hex'), asset.sha256, asset.name);
-    assert(png.equals(Buffer.from(pack.images[asset.name], 'base64')), asset.name);
+    const entry = pack.assets.find(a => a.name === asset.name);
+    const runtime = Buffer.from(pack.images[asset.name], 'base64');
+    const small = UPNG.decode(runtime.buffer.slice(runtime.byteOffset, runtime.byteOffset + runtime.byteLength));
+    assert.equal(small.width, entry.pixelWidth, asset.name);
+    assert.equal(small.height, entry.pixelHeight, asset.name);
+    assert.equal(entry.width, asset.width, asset.name);
+    assert.equal(entry.height, asset.height, asset.name);
+    assert.deepEqual(JSON.parse(JSON.stringify(entry.origin || null)), asset.origin || null, asset.name);
     const rgba = new Uint8Array(UPNG.toRGBA8(decoded)[0]);
-    if (asset.name !== 'MenuAchievements') assert(rgba.some((v, i) => i % 4 === 3 && v > 0), asset.name + ' is empty');
+    if (asset.name !== 'MenuAchievements') assert(rgba.some((v, i) => i % 4 === 3 && v > 0), asset.name +
+        ' is empty');
 }
 for (const file of ['pjs-loader.js', 'battlefront-images.js']) {
-    if (fs.existsSync(file)) acorn.parse(fs.readFileSync(file, 'utf8'), {ecmaVersion:5});
+    if (!fs.existsSync(file)) continue;
+    const tree = acorn.parse(fs.readFileSync(file, 'utf8'), {
+        ecmaVersion: 5
+    });
+
+    function walk(node) {
+        if (!node || typeof node !== 'object') return;
+        if (['ForStatement', 'ForInStatement', 'WhileStatement', 'DoWhileStatement'].includes(node.type)) {
+            assert.equal(node.body.type, 'BlockStatement', file + ' needs braces for Khan loop protection');
+        }
+        for (const value of Object.values(node)) {
+            if (Array.isArray(value)) value.forEach(walk);
+            else if (value && typeof value === 'object') walk(value);
+        }
+    }
+    walk(tree);
 }
-console.log(manifest.assets.length + ' PNGs match the manifest and packed bytes. PJS syntax passes.');
+const bytes = pack.assets.reduce((sum, a) => sum + a.pixelWidth * a.pixelHeight * 4, 0);
+assert(bytes < 64 * 1048576, 'Runtime image memory exceeds 64 MiB');
+console.log(manifest.assets.length + ' source and runtime PNGs verified. PJS syntax passes. Runtime pixels: ' + (bytes / 1048576).toFixed(1) + ' MiB.');
